@@ -1,0 +1,22 @@
+.Text__span {
+    border-bottom: 10px solid red;
+    display: block;
+    margin-top: -10px;
+    margin-left: 25px;
+    width: 60px;
+    position: relative;
+}
+
+[data-animam] {
+    opacity: 0;
+    transition: 1.5s;
+}
+
+[data-animam="top"] {
+    transform: translate3d(0, 0, 0);
+}
+
+[data-animam].animate {
+    opacity: 1;
+    transform: translate3d(0px, -50px, 0px);
+}
