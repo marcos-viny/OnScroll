@@ -1,23 +1,21 @@
-
- import { useEffect } from "react";
+import { useEffect } from "react";
 import "./styles.scss";
 
 export default function TesteScroll() {
-
-  function handleScroll(){
-         const animatinClass = 'animate';
-       const allSubMenus : NodeListOf<Element> = document.querySelectorAll('[data-anima]');
-       const windowTop = window.pageYOffset + ((window.innerHeight * 0.75));
-       for (const sub of allSubMenus as any){
-         if((windowTop) > sub.offsetTop){
-           sub.classList.add(animatinClass);
-    
-         }
-       }  
-     }
-     useEffect(() => {
-      window.addEventListener("scroll", handleScroll);
-     },[])
+  function handleScroll() {
+    const animatinClass = "animate";
+    const allSubMenus: NodeListOf<Element> =
+      document.querySelectorAll("[data-anima]");
+    const windowTop = window.pageYOffset + window.innerHeight * 0.75;
+    for (const sub of allSubMenus as any) {
+      if (windowTop > sub.offsetTop) {
+        sub.classList.add(animatinClass);
+      }
+    }
+  }
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div>
@@ -226,7 +224,7 @@ export default function TesteScroll() {
         </div>
       </div>
 
-      <div data-anima="top"  className="flex justify-center mb-10 mx-4">
+      <div data-anima="top" className="flex justify-center mb-10 mx-4">
         <div className="bg-red-500 p-4">
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
@@ -267,7 +265,7 @@ export default function TesteScroll() {
         </div>
       </div>
 
-      <div  data-anima="bottom" className="flex justify-center mx-4">
+      <div data-anima="bottom" className="flex justify-center mx-4">
         <div className="bg-red-500 p-4">
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
