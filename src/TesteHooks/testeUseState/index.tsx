@@ -1,18 +1,21 @@
 import { useState } from "react";
 
-import "./styles.scss";
 
-export default function TesteTimeout(){
+export default function TesteUseState(){
     const [numero, setNumero] = useState(0);
 
+    // function handleMais(){
+    //     setTimeout(() =>{
+    //         setNumero(numero + 1);
+    //     }, 2000);
+    // };
+
     function handleMais(){
-        setTimeout(() =>{
-            setNumero(numero + 1);
-        }, 2000);
+        setNumero((prevState) => prevState + 1);
     };
 
     function handleMenos(){
-        setNumero(numero - 1);
+        setNumero((prevState) => prevState - 1);
     };
     return(
         <>
