@@ -3,7 +3,7 @@ import TesteScroll from "./Componentes/TesteScroll/index";
 import Paralax from "./Componentes/Paralax/index";
 import Footer from "./Componentes/Footer/index";
 import Carrossel from "./Componentes/Carrossel/index";
-import { SliderData } from "./Componentes/Carrossel/SliderData";
+
 
 //Testes Hooks;
 import TesteUseState from "./TesteHooks/testeUseState/index";
@@ -16,9 +16,7 @@ export default function App() {
 
   return (
     <>
-      <div className="Container">
-       <Carrossel slides={SliderData}/>
-      </div>
+      <Carrossel />
     </>
   );
 }
