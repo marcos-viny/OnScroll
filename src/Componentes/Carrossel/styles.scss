@@ -1,54 +1,29 @@
-.container {
+.slider {
     position: relative;
-}
-
-.containerSlideShow {
-    display: flex;
-    flex-wrap: nowrap;
-}
-
-.slide {
-    min-width: 100%;
-    overflow: hidden;
-    transition: .3s ease;
-    z-index: 9;
-    max-height: 500px;
-    position: relative;
-    img {
-        width: 100%;
-    }
-}
-
-.controles {
-    position: absolute;
-    top: 0px;
-    z-index: 20;
-    width: 100%;
-    height: 100%;
     display: flex;
     justify-content: center;
-    justify-content: space-between;
+    align-items: center;
 }
 
-.icon {
-    width: 25px;
-    height: 25px;
-    color: red;
-    &:hover {
-        color: black;
-        transition: .5s ease;
-    }
+.image {
+    width: 1000px;
+    border-radius: 10px;
 }
 
-.naosei {
-    transition: .3s ease;
-    transform: translateX(500px);
+.right-arrow {
+    position: absolute;
+    top: 50px;
+    right: 32px;
+    font-size: 3rem;
+    cursor: pointer;
+    z-index: 10;
 }
 
-// .button {
-//     height: 100%;
-//     &:hover {
-//         background-color: rgba(0, 0, 0, .50);
-//         transition: .5s ease;
-//     }
-// }
+.left-arrow {
+    position: absolute;
+    top: 50px;
+    left: 32px;
+    font-size: 3rem;
+    cursor: pointer;
+    z-index: 10;
+}
