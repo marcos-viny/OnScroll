@@ -1,46 +1,42 @@
+import { useState } from "react";
 import { FaStepBackward, FaStepForward } from "react-icons/fa";
-import { useRef } from "react"
+import { SliderData } from "./SliderData";
 
-import Imagem__1 from "./imagem-1.jpeg";
-import Imagem__2 from "./imagem-2.png";
-import Imagem__3 from "./imagem-3.jpeg";
 
 import "./styles.scss";
 
-export default function Carrossel(){
-    
-    const slideshow = useRef(null);
+export default function Carrossel(slides:any){
 
-    const seguinte = () =>{
-        console.log(slideshow.current);        
+  const [current, setCurrent] = useState(0);
+  const length:any = slides;
+
+  const nextSlider = () => {
+    setCurrent(current === -1 ? 0 : + 1);
   };
-    
-    const anterior = () =>{
-        console.log('anterior');  
-    };
 
+  const prevSlides = () =>{
+    setCurrent(current === 0 ? length -1 : current -1)
+  }
+
+  console.log(setCurrent);
+  
+
+  if(Array.isArray(slides) || slides <= 0){
+    return null
+  }
+
+  
     return(
-        <>
-        <div className="container">
-          <div className="containerSlideShow" ref={slideshow}>
-            <div className="slide">
-               <img src={Imagem__1} alt=""/> 
-            </div>
-
-            <div className="slide">
-               <img src={Imagem__2} alt=""/> 
-            </div>
-
-            <div className="slide">
-               <img src={Imagem__3} alt=""/> 
-            </div>
-          </div>
-
-          <div className="controles">
-              <button onClick={anterior}> <FaStepBackward className="icon"/> </button>
-              <button onClick={seguinte}> <FaStepForward className="icon"/> </button>
-          </div>
-        </div>
-        </>
+        <section className="slider">
+          <FaStepBackward className="left-arrow" onClick={prevSlides}/>
+          <FaStepForward className="right-arrow" onClick={nextSlider} />
+          {SliderData.map((slide,index) =>{
+            return(
+              <div className={index === current ? 'slide active' : 'slide'}key={index}>
+                {index === current && (<img src={slide.image} alt="" className="image"/>)}
+              </div>
+            )
+          })}
+        </section>
     );
 };
