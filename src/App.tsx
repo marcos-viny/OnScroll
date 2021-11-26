@@ -16,6 +16,10 @@ export default function App() {
 
   return (
     <>
+     <Header />
+     <Paralax />
+     <TesteScroll />
+     <Footer />
       <Carrossel />
     </>
   );
