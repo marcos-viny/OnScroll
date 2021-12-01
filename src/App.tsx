@@ -4,7 +4,8 @@
 // import Footer from "./Componentes/Footer/index";
 // import Carrossel from "./Componentes/Carrossel/index";
 // import TesteCarrossel from "./TesteCarrossel/Slider";
-import Login from "./Componentes/Login/index";
+//import Login from "./Componentes/Login/index";
+import LOgin from "./Componentes/Login-0.1/index";
 
 
 //Testes Hooks;
@@ -18,7 +19,7 @@ export default function App() {
 
   return (
     <>
-      <Login />
+      <LOgin />
       {/* <TesteCarrossel /> */}
     </>
   );
